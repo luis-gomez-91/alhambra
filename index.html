@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body class="page-home">
 
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
@@ -22,6 +22,9 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <filter id="logo-ink" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 3 0"/>
+    </filter>
+    <filter id="logo-cream" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.91  0 0 0 3 0"/>
     </filter>
   </svg>
 
@@ -56,80 +59,253 @@
       </video>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__inner container">
-        <div class="hero__content intro">
+        <div class="hero__content">
           <h1 class="hero__name" id="hero-name">Alhambra</h1>
-          <h2 class="hero__title">Vive lo extraordinario</h2>
-          <p class="hero__lead">Mucho más que compras: gastronomía, entretenimiento y experiencias únicas que hacen de cada visita un momento especial.</p>
+          <!-- Cada palabra entra desde abajo de su propia máscara (--i marca el orden) -->
+          <h2 class="hero__title split"><span class="split__w"><span style="--i:0">Vive</span></span> <span class="split__w"><span style="--i:1">lo</span></span> <span class="split__w"><span style="--i:2">extraordinario</span></span></h2>
+          <p class="hero__lead intro">Mucho más que compras: gastronomía, entretenimiento y experiencias únicas que hacen de cada visita un momento especial.</p>
         </div>
+      </div>
+      <a class="hero__cue" href="#inicio" aria-label="Ir a próximos eventos">
+        <span class="hero__cue-text" aria-hidden="true">Desliza</span>
+        <span class="hero__cue-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- 3. Próximos eventos: la sección se queda fija mientras se hace scroll y
+         cada tramo muestra un evento. Van en orden cronológico; main.js quita los
+         de fechas pasadas. Sin JS o con movimiento reducido se ven apilados. -->
+    <section class="section events" id="inicio" aria-labelledby="events-title">
+      <div class="container">
+        <header class="discover__head events__head reveal">
+          <h2 class="discover__title split" id="events-title"><span class="split__w"><span style="--i:0">Próximos</span></span> <span class="split__w"><span style="--i:1">eventos</span></span></h2>
+          <p class="discover__sub">Siempre hay algo nuevo por vivir.</p>
+          <p class="discover__lead">Talleres, lanzamientos, ferias y experiencias para toda la familia. Desliza para ver lo que se viene en Alhambra Shopping y reserva tu lugar.</p>
+        </header>
+      </div>
+      <div class="events-scroll" data-events>
+        <div class="events-scroll__pin">
+          <div class="container">
+            <div class="events-panel">
+              <article class="event is-active" data-date="2026-02-13" data-short="13 feb" aria-labelledby="event-1">
+                <img class="event__bg" src="imagenes/bMHZY91kYoaBm3J81ZhOSSo4NZI.jpg" alt="" width="1594" height="784">
+                <p class="event__badge">Demostración</p>
+                <div class="event__body">
+                  <h3 class="event__title" id="event-1">Nuevo Alhambra 2</h3>
+                  <p class="hero__meta">
+                    <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-13">Viernes, 13 de febrero de 2026</time></span>
+                  </p>
+                  <div class="hero__actions">
+                    <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event" data-date="2026-02-14" data-short="14 feb" aria-labelledby="event-2">
+                <img class="event__bg" src="imagenes/Sy5Mex1hkXOH8fWgo3KqP5ywjg0.png" alt="" width="1440" height="960" loading="lazy" decoding="async">
+                <p class="event__badge">Taller</p>
+                <div class="event__body">
+                  <h3 class="event__title" id="event-2">Dilo con Flores</h3>
+                  <p class="hero__meta">
+                    <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-14">Sábado, 14 de febrero de 2026</time></span>
+                  </p>
+                  <div class="hero__actions">
+                    <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event" data-date="2026-07-28" data-short="28 jul" aria-labelledby="event-3">
+                <img class="event__bg" src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="" width="1024" height="682" loading="lazy" decoding="async">
+                <div class="event__body">
+                  <h3 class="event__title" id="event-3">Mid Year Sale</h3>
+                  <p class="hero__meta">
+                    <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-28T08:30">Martes, 28 de julio de 2026</time></span>
+                    <span><i class="ph ph-clock" aria-hidden="true"></i> 8H30</span>
+                  </p>
+                  <div class="hero__actions">
+                    <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="event" data-date="2026-07-30" data-short="30 jul" aria-labelledby="event-4">
+                <img class="event__bg" src="imagenes/GDUyFdQmdNCJHE0E1d6iQbMpeBA.webp" alt="" width="1320" height="734" loading="lazy" decoding="async">
+                <p class="event__badge">Fitness</p>
+                <div class="event__body">
+                  <h3 class="event__title" id="event-4">Feria Viva!</h3>
+                  <p class="hero__meta">
+                    <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-30T14:00">Jueves, 30 de julio de 2026</time></span>
+                    <span><i class="ph ph-clock" aria-hidden="true"></i> 2PM</span>
+                  </p>
+                  <div class="hero__actions">
+                    <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                    <ul class="sponsors" aria-label="Patrocinios">
+                      <li><img src="imagenes/AzdMndHYKY3liFiLwpYJi9sBrKc.jpeg" alt="Patrocinio 1" width="447" height="447" loading="lazy"></li>
+                      <li><img src="imagenes/04sPCICMpWpd5DB9cm1q846juno.png" alt="Patrocinio 2" width="432" height="462" loading="lazy"></li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <nav class="events-progress" aria-label="Ir a un evento" hidden>
+                <ol class="events-progress__list"></ol>
+                <p class="events-progress__count" aria-hidden="true"><b>01</b> / <span>04</span></p>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container events__more">
+        <a class="btn btn--dark" href="/eventos">Ver todos los eventos <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
       </div>
     </section>
 
-    <!-- 3. Próximos eventos, todos a la vez.
-         main.js ordena por fecha y quita los ya pasados. -->
-    <section class="section events" id="inicio" aria-labelledby="events-title" data-events>
+    <section class="section discover" id="descubre" aria-labelledby="discover-title">
       <div class="container">
-        <h2 class="eyebrow-title eyebrow-title--dark" id="events-title">
-          <img src="imagenes/A1ojXZTXGa5odrog3kpK2BxSGnk.svg" alt="" width="26" height="32"> Próximos eventos
-        </h2>
-        <ul class="events__grid">
-          <li class="event reveal" data-date="2026-02-13">
-            <a class="event__link" href="/eventos">
-              <img class="event__photo" src="imagenes/bMHZY91kYoaBm3J81ZhOSSo4NZI.jpg" alt="" width="1594" height="784">
-              <span class="event__date"><time datetime="2026-02-13"><b>13</b> feb</time></span>
-              <span class="event__copy">
-                <span class="event__type">Demostración</span>
-                <h3 class="event__title">Nuevo Alhambra 2</h3>
-                <span class="event__cta">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+        <header class="discover__head reveal">
+          <h2 class="discover__title split" id="discover-title"><span class="split__w"><span style="--i:0">Descubre</span></span> <span class="split__w"><span style="--i:1">Alhambra</span></span></h2>
+          <p class="discover__sub">Todo lo que buscas, en un solo lugar.</p>
+          <p class="discover__lead">Explora una selección de marcas, sabores, servicios y experiencias que hacen de Alhambra Shopping un lugar para disfrutar, descubrir y compartir.</p>
+        </header>
+
+        <ul class="discover__grid">
+          <li class="discover__item discover__item--wide reveal">
+            <a class="discover__frame" href="marcas.html" data-cursor="Ver">
+              <img src="imagenes/NW4PnMlNLQ7J5N56nNn8QfjlfJI.jpg" alt="Traje, zapatos y maletín de una marca de moda" width="1600" height="1600" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-handbag" aria-hidden="true"></i>
+                <span class="discover__name">Moda y accesorios</span>
+                <span class="discover__text">Encuentra marcas, tendencias y estilos para cada ocasión.</span>
               </span>
             </a>
           </li>
-          <li class="event reveal" data-date="2026-02-14">
-            <a class="event__link" href="/eventos">
-              <img class="event__photo" src="imagenes/Sy5Mex1hkXOH8fWgo3KqP5ywjg0.png" alt="" width="1440" height="960" loading="lazy" decoding="async">
-              <span class="event__date"><time datetime="2026-02-14"><b>14</b> feb</time></span>
-              <span class="event__copy">
-                <span class="event__type">Taller</span>
-                <h3 class="event__title">Dilo con Flores</h3>
-                <span class="event__cta">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          <li class="discover__item reveal">
+            <a class="discover__frame" href="marcas.html" data-cursor="Ver">
+              <img src="imagenes/kMac0bPT6bBwHz5CRIqLW6GJ2Y.jpg" alt="Tratamiento facial en un espacio de belleza" width="1200" height="1500" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-flower-lotus" aria-hidden="true"></i>
+                <span class="discover__name">Belleza y bienestar</span>
+                <span class="discover__text">Descubre espacios dedicados al cuidado personal y al bienestar.</span>
               </span>
             </a>
           </li>
-          <li class="event reveal" data-date="2026-07-28">
-            <a class="event__link" href="/eventos">
-              <img class="event__photo" src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="" width="1024" height="682" loading="lazy" decoding="async">
-              <span class="event__date"><time datetime="2026-07-28T08:30"><b>28</b> jul</time></span>
-              <span class="event__copy">
-                <h3 class="event__title">Mid Year Sale</h3>
-                <span class="event__when"><i class="ph ph-clock" aria-hidden="true"></i> 8H30</span>
-                <span class="event__cta">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          <li class="discover__item reveal">
+            <a class="discover__frame" href="marcas.html" data-cursor="Ver">
+              <img src="imagenes/hero/marcas.jpeg" alt="Tienda Unity Home, hogar y decoración" width="1600" height="1066" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-lamp" aria-hidden="true"></i>
+                <span class="discover__name">Hogar y decoración</span>
+                <span class="discover__text">Encuentra inspiración y detalles para tus espacios.</span>
               </span>
             </a>
           </li>
-          <li class="event reveal" data-date="2026-07-30">
-            <a class="event__link" href="/eventos">
-              <img class="event__photo" src="imagenes/GDUyFdQmdNCJHE0E1d6iQbMpeBA.webp" alt="" width="1320" height="734" loading="lazy" decoding="async">
-              <span class="event__date"><time datetime="2026-07-30T14:00"><b>30</b> jul</time></span>
-              <span class="event__copy">
-                <span class="event__type">Fitness</span>
-                <h3 class="event__title">Feria Viva!</h3>
-                <span class="event__foot">
-                  <span class="event__when"><i class="ph ph-clock" aria-hidden="true"></i> 2PM</span>
-                  <ul class="sponsors" aria-label="Patrocinios">
-                    <li><img src="imagenes/AzdMndHYKY3liFiLwpYJi9sBrKc.jpeg" alt="Patrocinio 1" width="447" height="447" loading="lazy"></li>
-                    <li><img src="imagenes/04sPCICMpWpd5DB9cm1q846juno.png" alt="Patrocinio 2" width="432" height="462" loading="lazy"></li>
-                  </ul>
-                </span>
-                <span class="event__cta">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          <li class="discover__item reveal">
+            <a class="discover__frame" href="restaurantes.html" data-cursor="Ver">
+              <img src="imagenes/hero/comidas.jpeg" alt="Propuesta gastronómica de Alhambra Shopping" width="1600" height="1066" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-fork-knife" aria-hidden="true"></i>
+                <span class="discover__name">Gastronomía</span>
+                <span class="discover__text">Disfruta de restaurantes, cafeterías y propuestas para todos los gustos.</span>
+              </span>
+            </a>
+          </li>
+          <li class="discover__item reveal">
+            <a class="discover__frame" href="marcas.html" data-cursor="Ver">
+              <img src="imagenes/x8kZZ5brski3bKyqQPFCBq5PIA.jpeg" alt="Taller de relojería, un servicio del centro comercial" width="1600" height="1066" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-device-mobile" aria-hidden="true"></i>
+                <span class="discover__name">Tecnología y servicios</span>
+                <span class="discover__text">Descubre soluciones y servicios para tu día a día.</span>
+              </span>
+            </a>
+          </li>
+          <li class="discover__item discover__item--band reveal">
+            <a class="discover__frame" href="#inicio" data-cursor="Ver">
+              <img src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="Actividad en Alhambra Shopping" width="1024" height="682" loading="lazy" decoding="async">
+              <span class="discover__shade" aria-hidden="true"></span>
+              <span class="discover__body">
+                <i class="ph ph-confetti" aria-hidden="true"></i>
+                <span class="discover__name">Eventos y experiencias</span>
+                <span class="discover__text">Vive actividades, encuentros y momentos especiales en Alhambra.</span>
               </span>
             </a>
           </li>
         </ul>
+
+        <a class="discover__all reveal" href="/shopping">
+          <span>
+            <span class="discover__all-title">Descubre todas nuestras marcas</span>
+            <span class="discover__all-text">Explora la oferta de Alhambra Shopping y encuentra tu próximo lugar favorito.</span>
+          </span>
+          <span class="discover__go">Explorar <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. Mantente conectado -->
+    <section class="section subscribe" id="suscripcion" aria-labelledby="subscribe-title">
+      <div class="container">
+        <header class="discover__head reveal">
+          <h2 class="discover__title split" id="subscribe-title"><span class="split__w"><span style="--i:0">Mantente</span></span> <span class="split__w"><span style="--i:1">conectado</span></span></h2>
+          <p class="discover__sub">Eventos y promociones, directo a tu correo.</p>
+          <p class="discover__lead">Déjanos tus datos y sé de los primeros en enterarte de nuestros próximos eventos, novedades y experiencias especiales.</p>
+        </header>
+
+        <form class="form reveal" id="subscribe-form" novalidate>
+          <div class="field">
+            <label for="f-nombres">Nombres</label>
+            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-nombres" name="nombres" type="text" autocomplete="given-name" required maxlength="80"></div>
+          </div>
+          <div class="field">
+            <label for="f-apellidos">Apellidos</label>
+            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" required maxlength="80"></div>
+          </div>
+          <div class="field field--wide">
+            <label for="f-email">Email</label>
+            <div class="field__control"><i class="ph ph-envelope-simple" aria-hidden="true"></i><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" spellcheck="false"></div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-telefono">Teléfono <span class="field__opt">(opcional)</span></label>
+              <div class="field__control"><i class="ph ph-phone" aria-hidden="true"></i><input id="f-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+\s\(\)\-]{7,20}"></div>
+            </div>
+            <div class="field">
+              <label for="f-ciudad">Ciudad</label>
+              <div class="field__control"><i class="ph ph-map-pin" aria-hidden="true"></i><input id="f-ciudad" name="ciudad" type="text" autocomplete="address-level2" required maxlength="60"></div>
+            </div>
+          </div>
+          <div class="form__foot field--wide">
+            <button class="form__submit" type="submit">Enviar <span><i class="ph ph-arrow-right" aria-hidden="true"></i></span></button>
+          </div>
+        </form>
       </div>
     </section>
 
     <!-- 3. Marcas y restaurantes: dos filas de logos en movimiento -->
     <section class="section logos" id="directorio" aria-label="Marcas y restaurantes">
+      <div class="logos__stage">
+      <img class="logos__bg" src="imagenes/UhdlIoRsfWHJRucJxnnM1PmPo.jpg" alt="" width="1920" height="1280" decoding="async">
+      <div class="logos__veil" aria-hidden="true"></div>
+      <!-- Cifras: main.js cuenta desde 0 hasta data-count al entrar en pantalla.
+           Marcas, restaurantes y categorías salen de marcas.html y restaurantes.html. -->
+      <div class="container">
+        <h2 class="logos__title reveal">
+          <span class="logos__line"><span class="logos__num" data-count="25"><span>25</span></span> marcas, <span class="logos__num" data-count="9"><span>9</span></span> restaurantes y <span class="logos__num" data-count="42"><span>42</span></span> categorías,</span>
+          <span class="logos__line">abiertos los <span class="logos__num" data-count="7"><span>7</span></span> días de la semana.</span>
+        </h2>
+      </div>
+
       <div class="logo-row reveal">
+        <div class="container logo-row__head">
+          <h3 class="logo-row__label">Marcas</h3>
+          <a class="logo-row__link" href="marcas.html">Ver todas las marcas <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
         <div class="marquee" data-marquee>
           <ul class="marquee__track" aria-label="Marcas">
               <li><img src="imagenes/logos/8bf7DHVd1QJ6DLbsjK5i5mi604.png" alt="Logo local 1" width="156" height="88" loading="lazy" decoding="async"></li>
@@ -161,6 +337,10 @@
       </div>
 
       <div class="logo-row reveal">
+        <div class="container logo-row__head">
+          <h3 class="logo-row__label">Restaurantes</h3>
+          <a class="logo-row__link" href="restaurantes.html">Ver todos los restaurantes <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
         <div class="marquee marquee--reverse" data-marquee>
           <ul class="marquee__track" aria-label="Restaurantes">
               <li><img src="imagenes/logos/lDZrqzOuzHtm3iejve55iVnJw.png" alt="Logo restaurante 1" width="94" height="96" loading="lazy" decoding="async"></li>
@@ -175,47 +355,6 @@
           </ul>
         </div>
       </div>
-    </section>
-
-    <!-- 4. Mantente conectado -->
-    <section class="section subscribe" id="suscripcion" aria-labelledby="subscribe-title">
-      <div class="container subscribe__inner">
-        <div class="subscribe__aside reveal">
-          <h2 class="subscribe__title" id="subscribe-title">Mantente conectado</h2>
-          <p>No te pierdas ningún evento ni promoción. Suscríbete a nuestra base de clientes y recibe información vía email.</p>
-        </div>
-
-        <form class="form reveal" id="subscribe-form" novalidate>
-          <div class="field">
-            <label for="f-nombres">Nombres</label>
-            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-nombres" name="nombres" type="text" autocomplete="given-name" required maxlength="80"></div>
-            <p class="field__error" id="e-nombres">Escribe tus nombres.</p>
-          </div>
-          <div class="field">
-            <label for="f-apellidos">Apellidos</label>
-            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" required maxlength="80"></div>
-            <p class="field__error" id="e-apellidos">Escribe tus apellidos.</p>
-          </div>
-          <div class="field field--wide">
-            <label for="f-email">Email</label>
-            <div class="field__control"><i class="ph ph-envelope-simple" aria-hidden="true"></i><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" spellcheck="false"></div>
-            <p class="field__error" id="e-email">Escribe un email válido, por ejemplo nombre@correo.com.</p>
-          </div>
-          <div class="field">
-            <label for="f-telefono">Teléfono <span class="field__opt">(opcional)</span></label>
-            <div class="field__control"><i class="ph ph-phone" aria-hidden="true"></i><input id="f-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+\s\(\)\-]{7,20}"></div>
-            <p class="field__error" id="e-telefono">Usa solo números, espacios o el signo +.</p>
-          </div>
-          <div class="field">
-            <label for="f-ciudad">Ciudad</label>
-            <div class="field__control"><i class="ph ph-map-pin" aria-hidden="true"></i><input id="f-ciudad" name="ciudad" type="text" autocomplete="address-level2" required maxlength="60"></div>
-            <p class="field__error" id="e-ciudad">Escribe tu ciudad.</p>
-          </div>
-          <div class="form__foot field--wide">
-            <button class="btn btn--dark" type="submit">Enviar <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
-            <p class="form__status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
       </div>
     </section>
 
@@ -300,6 +439,7 @@
     </div>
   </footer>
 
+  <div class="toast" id="form-toast" role="status" aria-live="polite" hidden></div>
   <script src="main.js" defer></script>
 </body>
 </html>
