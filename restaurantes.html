@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurantes · Alhambra Shopping</title>
+  <meta name="description" content="Restaurantes, cafeterías y bares de Alhambra Shopping en Samborondón.">
+  <link rel="icon" type="image/svg+xml" href="imagenes/A1ojXZTXGa5odrog3kpK2BxSGnk.svg" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="imagenes/AQs4AXTCh4L6G4kVfkC6pmpUdcg.svg" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="imagenes/M96k7bgr72ZjCvkko9MDVz3xU.png">
+  <link rel="preload" href="fonts/neutraface-text-book.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/neutraface-2-display-medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Pasa a negro sólido los logos con trazo semitransparente -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="logo-ink" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 3 0"/>
+    </filter>
+  </svg>
+
+  <!-- 1. Navegación -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="index.html" aria-label="Alhambra Shopping, inicio">
+        <img src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324">
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+        <i class="ph ph-list" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Principal">
+        <ul class="nav__links">
+          <li><a href="marcas.html">Marcas</a></li>
+          <li><a href="restaurantes.html" aria-current="page">Restaurantes</a></li>
+          <li><a href="index.html#inicio">Eventos</a></li>
+          <li><a href="/salonauditorio">Auditorio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <section class="hero hero--page" aria-labelledby="page-title">
+      <img class="hero__bg" src="imagenes/hero-restaurantes.jpg" alt="" width="2000" height="1335" fetchpriority="high">
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <div class="hero__content intro">
+          <img class="hero__mark" src="imagenes/AQs4AXTCh4L6G4kVfkC6pmpUdcg.svg" alt="" width="26" height="32">
+          <h1 class="hero__title" id="page-title">Restaurantes</h1>
+          <p class="hero__lead">Cocina de autor, cafés y sobremesas largas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Directorio de restaurantes -->
+    <section class="section directory" id="directorio" aria-labelledby="restaurantes-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 class="eyebrow-title eyebrow-title--dark" id="restaurantes-title">
+            <img src="imagenes/A1ojXZTXGa5odrog3kpK2BxSGnk.svg" alt="" width="26" height="32"> Directorio
+          </h2>
+          <p class="section__sub">Tipo de comidas</p>
+        </header>
+
+        <div class="search reveal" role="search">
+          <label class="visually-hidden" for="search-restaurantes">Buscar restaurantes</label>
+          <div class="search__control">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+            <input id="search-restaurantes" type="search" placeholder="Busca un restaurante o tipo de comida" autocomplete="off" spellcheck="false" maxlength="60" data-target="restaurantes-grid" aria-controls="restaurantes-grid">
+          </div>
+        </div>
+
+        <ul class="chips reveal" aria-label="Tipos de comida" data-target="restaurantes-grid" data-total="20">
+          <li><span class="chip chip--all" data-filter="todas">Todas</span></li>
+          <li><span class="chip">Italiana</span></li>
+          <li><span class="chip">Japonesa</span></li>
+          <li><span class="chip">Carnes y Parrilla</span></li>
+          <li><span class="chip">Internacional</span></li>
+          <li><span class="chip">Cafetería</span></li>
+          <li><span class="chip">Postres</span></li>
+          <li data-extra><span class="chip">Chocolatería</span></li>
+          <li data-extra><span class="chip">Vinos y Licores</span></li>
+          <li data-extra><span class="chip">Comida Saludable</span></li>
+          <li data-extra><span class="chip">Lounge y Bebidas</span></li>
+          <li data-extra><span class="chip">Mexicana</span></li>
+          <li data-extra><span class="chip">Peruana</span></li>
+          <li data-extra><span class="chip">Fusión</span></li>
+          <li data-extra><span class="chip">Helados</span></li>
+          <li data-extra><span class="chip">China</span></li>
+          <li data-extra><span class="chip">Pizzería</span></li>
+          <li data-extra><span class="chip">Hamburguesas</span></li>
+          <li data-extra><span class="chip">Panadería</span></li>
+          <li data-extra><span class="chip">Deli market</span></li>
+          <li data-extra><span class="chip">Gourmet</span></li>
+        </ul>
+
+        <ul class="grid" id="restaurantes-grid">
+          <li class="card reveal" data-categorias="Deli market"><figure class="card__photo"><img src="imagenes/zJKv8NwLmyTagDcvg9AHZt5Sz4I.jpeg" alt="Restaurante 1" width="1066" height="1600" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/lDZrqzOuzHtm3iejve55iVnJw.png" alt="Logo restaurante 1" width="240" height="131" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Carnes y Parrilla"><figure class="card__photo"><img src="imagenes/R0gtDIhFLgBO7vaZD69B0rJDcY.png" alt="Restaurante 2" width="7008" height="4672" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/yAwPrRkR3bD5VeX8gBeJfdWc.png" alt="Logo restaurante 2" width="240" height="131" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Japonesa"><figure class="card__photo"><img src="imagenes/v1A4HFZUGJIb6ySiFtaUa1sCc.jpg" alt="Restaurante 3" width="1080" height="1346" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/E0t4ob96kI9w4SRiAj5xmgXDz5Y.png" alt="Logo restaurante 3" width="240" height="131" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Italiana"><figure class="card__photo"><img src="imagenes/agXOqY7MQjJCRIkasuNMcHQV54.png" alt="Restaurante 4" width="2731" height="2026" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/PStisN1WOjMW9ozrm7ZbMcwXYI.png" alt="Logo restaurante 4" width="240" height="131" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Peruana"><figure class="card__photo"><img src="imagenes/8IPc5A6YI1Mtl31PxqkAvMYqBg.jpeg" alt="Restaurante 5" width="2774" height="4160" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/RiVwOGWnWcGiXfUfAJKmfoDDHo.png" alt="Logo restaurante 5" width="600" height="300" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Mexicana"><figure class="card__photo"><img src="imagenes/U1mkjqg9TuBsLlEVfmsl17wg8j8.jpg" alt="Restaurante 6" width="1080" height="721" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/hzPWJZ6Xck05EmfjnRDebDIzFE.png" alt="Logo restaurante 6" width="600" height="300" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Panadería"><figure class="card__photo"><img src="imagenes/d1QB4FiJJ33naslIG3XIv0MsTNw.jpeg" alt="Restaurante 7" width="6000" height="4000" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/lC26F97ZzURvoSFOw6Z97h9m8jA.png" alt="Logo restaurante 7" width="600" height="300" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Vinos y Licores"><figure class="card__photo"><img src="imagenes/TToM42xFjUoZAx9Vv59HbzITP0.jpeg" alt="Restaurante 8" width="6240" height="4160" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/98pLEPqYlxGPK63FOvdPNs4PmDk.png" alt="Logo restaurante 8" width="240" height="131" loading="lazy"></div></li>
+          <li class="card reveal" data-categorias="Cafetería"><figure class="card__photo"><img src="imagenes/Pe4LE8EjMnyusT4uxTatcib2uAA.jpg" alt="Restaurante 9" width="3505" height="5128" loading="lazy" decoding="async"></figure><div class="card__logo"><img src="imagenes/O4vBnESSprdmfvUmtGrw5Jf7U.png" alt="Logo restaurante 9" width="240" height="131" loading="lazy"></div></li>
+        </ul>
+        <p class="search__empty" data-empty-for="restaurantes-grid" aria-live="polite"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <!-- Fila superior: redes, marcas del grupo, suscripción -->
+      <div class="footer__row footer__row--top">
+        <div class="footer__item">
+          <h2 class="footer__title">Síguenos</h2>
+          <ul class="footer__social">
+            <li><a href="https://www.instagram.com/alhambraplaza" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Alhambra (abre en una pestaña nueva)"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/alhambrashopping" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Alhambra (abre en una pestaña nueva)"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.tiktok.com/@alhambrashopping" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Alhambra (abre en una pestaña nueva)"><i class="ph ph-tiktok-logo" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__item">
+          <h2 class="footer__title">Nuestros centros</h2>
+          <div class="footer__brands">
+            <img src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324" loading="lazy">
+            <a href="https://www.costa-plaza.com/" target="_blank" rel="noopener noreferrer" aria-label="Costa Plaza (abre en una pestaña nueva)"><img src="imagenes/IId5KRdEMNy0J9srei1GHS3PVco.svg" alt="Costa Plaza" width="38" height="42" loading="lazy"></a>
+          </div>
+        </div>
+        <div class="footer__item">
+          <h2 class="footer__title" id="f-suscribete">Suscríbete</h2>
+          <form class="footer__subscribe" id="footer-subscribe" aria-labelledby="f-suscribete" novalidate>
+            <label class="visually-hidden" for="ff-email">Email</label>
+            <input id="ff-email" type="email" name="email" placeholder="Ingresa tu email" autocomplete="email" spellcheck="false" maxlength="120">
+            <button type="submit" aria-label="Continuar suscripción"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bloque central: enlaces, horarios, contacto, ubicación -->
+      <div class="footer__row footer__row--center">
+        <nav class="footer__item" aria-label="Enlaces del sitio">
+          <h2 class="footer__title">Nosotros</h2>
+          <a class="footer__link" href="/ubicacion"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Ubicación</a>
+          <a class="footer__link" href="/oficinas"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Oficinas</a>
+          <a class="footer__link" href="/salonauditorio"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Salón Auditorio</a>
+          <a class="footer__link" href="/contacto"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Contacto</a>
+
+          <h2 class="footer__title footer__title--next">Explorar</h2>
+          <a class="footer__link" href="marcas.html"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Marcas</a>
+          <a class="footer__link" href="restaurantes.html"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Restaurantes</a>
+          <a class="footer__link" href="index.html#inicio"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Eventos</a>
+          <a class="footer__link" href="/blog"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Blog</a>
+        </nav>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Horarios de atención</h2>
+          <p class="footer__label">Centro Comercial</p>
+          <p>Lunes a domingo: 10h00 a 21h00</p>
+          <p class="footer__label">Restaurantes</p>
+          <p>Lunes a domingo: hasta las 23h00</p>
+          <p class="footer__label">Oficinas administrativas</p>
+          <p>Lunes a viernes: 08h30 a 17h30</p>
+        </div>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Contáctanos</h2>
+          <p>Teléfono: <a href="tel:+59346005220">(04) 600-5220</a></p>
+          <a class="footer__link" href="/contacto"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Escríbenos</a>
+        </div>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Visítanos</h2>
+          <address>Vía a Samborondón y Celeste Blacio de Rendón, Samborondón – Ecuador</address>
+          <a class="footer__link" href="https://maps.app.goo.gl/J7jprExU6aCsafxE7" target="_blank" rel="noopener noreferrer"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Ver mapa</a>
+        </div>
+      </div>
+
+      <p class="footer__legal">Alhambra Shopping, Alhambra, Costa Plaza, las marcas, colores y signos distintivos, logotipos y colores son marcas registradas de Inmobiliaria Cobilhambra S.A. Los demás son de propiedad y derecho de sus respectivos propietarios. La información en este sitio es informativa e ilustrativa y sujeta a cambios.</p>
+
+      <div class="footer__row footer__row--bottom">
+        <p>© 2026 Alhambra Shopping. Todos los derechos reservados.</p>
+        <p>Inmobiliaria Cobilhambra S.A.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

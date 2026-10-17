@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alhambra Shopping</title>
+  <meta name="description" content="El sitio de Internet oficial de Alhambra. Tiendas, Restaurantes, Salones y Rooftop. Alhambra es estilo y estilo de vida.">
+  <link rel="icon" type="image/svg+xml" href="imagenes/A1ojXZTXGa5odrog3kpK2BxSGnk.svg" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="imagenes/AQs4AXTCh4L6G4kVfkC6pmpUdcg.svg" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="imagenes/M96k7bgr72ZjCvkko9MDVz3xU.png">
+  <link rel="preload" href="fonts/neutraface-text-book.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/neutraface-2-display-medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Pasa a negro sólido los logos con trazo semitransparente -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="logo-ink" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 3 0"/>
+    </filter>
+  </svg>
+
+  <!-- 1. Navegación -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="index.html" aria-label="Alhambra Shopping, inicio">
+        <img src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324">
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+        <i class="ph ph-list" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Principal">
+        <ul class="nav__links">
+          <li><a href="marcas.html">Marcas</a></li>
+          <li><a href="restaurantes.html">Restaurantes</a></li>
+          <li><a href="index.html#inicio">Eventos</a></li>
+          <li><a href="/salonauditorio">Auditorio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- 2. Carrusel de próximos eventos.
+         Las diapositivas van en orden cronológico; main.js quita las de fechas pasadas. -->
+    <section class="hero hero--carousel" id="inicio" aria-roledescription="carrusel" aria-labelledby="hero-title" data-carousel>
+      <div class="carousel__bgs" aria-hidden="true">
+        <img class="carousel__bg is-active" src="imagenes/bMHZY91kYoaBm3J81ZhOSSo4NZI.jpg" alt="" width="1594" height="784" fetchpriority="high">
+        <img class="carousel__bg" src="imagenes/Sy5Mex1hkXOH8fWgo3KqP5ywjg0.png" alt="" width="1440" height="960" decoding="async">
+        <img class="carousel__bg" src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="" width="1024" height="682" decoding="async">
+        <img class="carousel__bg" src="imagenes/GDUyFdQmdNCJHE0E1d6iQbMpeBA.webp" alt="" width="1320" height="734" decoding="async">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <div class="carousel intro">
+          <h1 class="eyebrow-title carousel__label" id="hero-title">
+            <img src="imagenes/AQs4AXTCh4L6G4kVfkC6pmpUdcg.svg" alt="" width="26" height="32"> Próximos eventos
+          </h1>
+
+          <div class="carousel__stage" aria-live="off">
+            <div class="slide is-active" role="group" aria-roledescription="diapositiva" data-date="2026-02-13" data-short="13 feb">
+              <p class="slide__type">Demostración</p>
+              <h2 class="hero__title">Nuevo Alhambra 2</h2>
+              <p class="hero__meta">
+                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-13">Viernes, 13 de febrero de 2026</time></span>
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-02-14" data-short="14 feb">
+              <p class="slide__type">Taller</p>
+              <h2 class="hero__title">Dilo con Flores</h2>
+              <p class="hero__meta">
+                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-14">Sábado, 14 de febrero de 2026</time></span>
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-07-28" data-short="28 jul">
+              <h2 class="hero__title">Mid Year Sale</h2>
+              <p class="hero__meta">
+                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-28T08:30">Martes, 28 de julio de 2026</time></span>
+                <span><i class="ph ph-clock" aria-hidden="true"></i> 8H30</span>
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-07-30" data-short="30 jul">
+              <p class="slide__type">Fitness</p>
+              <h2 class="hero__title">Feria Viva!</h2>
+              <p class="hero__meta">
+                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-30T14:00">Jueves, 30 de julio de 2026</time></span>
+                <span><i class="ph ph-clock" aria-hidden="true"></i> 2PM</span>
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+                <ul class="sponsors" aria-label="Patrocinios">
+                  <li><img src="imagenes/AzdMndHYKY3liFiLwpYJi9sBrKc.jpeg" alt="Patrocinio 1" width="447" height="447" loading="lazy"></li>
+                  <li><img src="imagenes/04sPCICMpWpd5DB9cm1q846juno.png" alt="Patrocinio 2" width="432" height="462" loading="lazy"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__nav">
+            <ol class="carousel__dots" aria-label="Elegir evento"></ol>
+            <div class="carousel__buttons">
+              <button class="carousel__btn" type="button" data-action="pause" aria-label="Pausar carrusel"><i class="ph ph-pause" aria-hidden="true"></i></button>
+              <button class="carousel__btn" type="button" data-action="prev" aria-label="Evento anterior"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+              <button class="carousel__btn" type="button" data-action="next" aria-label="Evento siguiente"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Marcas y restaurantes: dos filas de logos en movimiento -->
+    <section class="section logos" id="directorio" aria-label="Marcas y restaurantes">
+      <div class="logo-row reveal">
+        <div class="marquee" data-marquee>
+          <ul class="marquee__track" aria-label="Marcas">
+              <li><img src="imagenes/logos/8bf7DHVd1QJ6DLbsjK5i5mi604.png" alt="Logo local 1" width="156" height="88" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/tdeqeVCJSVwHWNfRJUpIcHVeJo.png" alt="Logo local 2" width="175" height="25" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/4NdOLsO3o3SoWbYghYMW9vxKi8.png" alt="Logo local 3" width="159" height="96" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/stBMKfpWHtdIRe32MAlqOk3m48.png" alt="Logo local 4" width="478" height="52" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/Wh8jTSQvn6Flellwcs2E5fudX88.png" alt="Logo local 5" width="226" height="40" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/12XxyjuA7uuLp74ctMtfk1N7WQ.png" alt="Logo local 6" width="164" height="55" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/nCz8n5M5txSENDwbSRrTg7C6axk.png" alt="Logo local 7" width="174" height="57" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/UaD69ctkqtYAcRShykIIVewHc.png" alt="Logo local 8" width="146" height="66" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/EeYZM1WITfagtfftczHLWVk2TPU.png" alt="Logo local 9" width="140" height="88" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/hNmb2C5QJIoUk5dxxv2yHc5C6o.png" alt="Logo local 10" width="120" height="58" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/tR0EZRPpq0ypyNoKLdGG078TkE.png" alt="Logo local 11" width="180" height="61" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/ir6mM8cb18IdLst8hQSNoT1Wr6o.png" alt="Logo local 12" width="226" height="71" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/BUcjWcwbfnSweYuqM2LCAaJQps.png" alt="Logo local 14" width="226" height="28" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/NSkvQdOQ2qGX2aBVvalqmNYk.png" alt="Logo local 15" width="159" height="84" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/rQvuJf2VFrRvp2i7F3LkCRNow.png" alt="Logo local 16" width="226" height="86" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/f70BoKLQSx15dHaeXgBHV43KQrQ.png" alt="Logo local 17" width="226" height="36" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/2WO841hejj86VpeTq4FCMcUVc.png" alt="Logo local 18" width="223" height="160" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/kUG6MvAnKyQuWPPQ8K7IqvUBXv0.png" alt="Logo local 19" width="180" height="53" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/6OLwS9SKoloLo6zCQtpyZZ5QO0A.png" alt="Logo local 20" width="389" height="139" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/fe6SmII2vqbcU6B1yPZadogMNs.png" alt="Logo local 21" width="186" height="67" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/vSLKBFzi8VKNEYrijAU3Z7lcpuA.png" alt="Logo local 22" width="201" height="61" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/kH2PAqQRsJQvNFBQ2IqCWdsv2Og.png" alt="Logo local 23" width="500" height="160" loading="lazy" decoding="async"></li>
+              <li class="marquee__item--faint"><img src="imagenes/logos/Wk6EXDEK64sfqN4K44aDd5uyVpY.png" alt="Logo local 24" width="226" height="85" loading="lazy" decoding="async"></li>
+              <li class="marquee__item--faint"><img src="imagenes/logos/1vxAhFRaw9KDp9mtW4r4f0D1t9M.png" alt="Logo local 25" width="382" height="160" loading="lazy" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="logo-row reveal">
+        <div class="marquee marquee--reverse" data-marquee>
+          <ul class="marquee__track" aria-label="Restaurantes">
+              <li><img src="imagenes/logos/lDZrqzOuzHtm3iejve55iVnJw.png" alt="Logo restaurante 1" width="94" height="96" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/yAwPrRkR3bD5VeX8gBeJfdWc.png" alt="Logo restaurante 2" width="225" height="29" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/E0t4ob96kI9w4SRiAj5xmgXDz5Y.png" alt="Logo restaurante 3" width="220" height="48" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/PStisN1WOjMW9ozrm7ZbMcwXYI.png" alt="Logo restaurante 4" width="226" height="76" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/RiVwOGWnWcGiXfUfAJKmfoDDHo.png" alt="Logo restaurante 5" width="358" height="160" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/hzPWJZ6Xck05EmfjnRDebDIzFE.png" alt="Logo restaurante 6" width="529" height="142" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/lC26F97ZzURvoSFOw6Z97h9m8jA.png" alt="Logo restaurante 7" width="531" height="151" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/98pLEPqYlxGPK63FOvdPNs4PmDk.png" alt="Logo restaurante 8" width="220" height="79" loading="lazy" decoding="async"></li>
+              <li><img src="imagenes/logos/O4vBnESSprdmfvUmtGrw5Jf7U.png" alt="Logo restaurante 9" width="219" height="63" loading="lazy" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Mantente conectado -->
+    <section class="section subscribe" id="suscripcion" aria-labelledby="subscribe-title">
+      <div class="container subscribe__inner">
+        <div class="subscribe__aside reveal">
+          <img class="subscribe__logo" src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324" loading="lazy">
+          <h2 class="subscribe__title" id="subscribe-title">Mantente conectado</h2>
+          <p>No te pierdas ningún evento ni promoción. Suscríbete a nuestra base de clientes y recibe información vía email.</p>
+        </div>
+
+        <form class="form reveal" id="subscribe-form" novalidate>
+          <div class="field">
+            <label for="f-nombres">Nombres</label>
+            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-nombres" name="nombres" type="text" autocomplete="given-name" required maxlength="80"></div>
+            <p class="field__error" id="e-nombres">Escribe tus nombres.</p>
+          </div>
+          <div class="field">
+            <label for="f-apellidos">Apellidos</label>
+            <div class="field__control"><i class="ph ph-user" aria-hidden="true"></i><input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" required maxlength="80"></div>
+            <p class="field__error" id="e-apellidos">Escribe tus apellidos.</p>
+          </div>
+          <div class="field field--wide">
+            <label for="f-email">Email</label>
+            <div class="field__control"><i class="ph ph-envelope-simple" aria-hidden="true"></i><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" spellcheck="false"></div>
+            <p class="field__error" id="e-email">Escribe un email válido, por ejemplo nombre@correo.com.</p>
+          </div>
+          <div class="field">
+            <label for="f-telefono">Teléfono <span class="field__opt">(opcional)</span></label>
+            <div class="field__control"><i class="ph ph-phone" aria-hidden="true"></i><input id="f-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+\s\(\)\-]{7,20}"></div>
+            <p class="field__error" id="e-telefono">Usa solo números, espacios o el signo +.</p>
+          </div>
+          <div class="field">
+            <label for="f-ciudad">Ciudad</label>
+            <div class="field__control"><i class="ph ph-map-pin" aria-hidden="true"></i><input id="f-ciudad" name="ciudad" type="text" autocomplete="address-level2" required maxlength="60"></div>
+            <p class="field__error" id="e-ciudad">Escribe tu ciudad.</p>
+          </div>
+          <div class="form__foot field--wide">
+            <button class="btn btn--dark" type="submit">Enviar <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <!-- Fila superior: redes, marcas del grupo, suscripción -->
+      <div class="footer__row footer__row--top">
+        <div class="footer__item">
+          <h2 class="footer__title">Síguenos</h2>
+          <ul class="footer__social">
+            <li><a href="https://www.instagram.com/alhambraplaza" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Alhambra (abre en una pestaña nueva)"><i class="ph ph-instagram-logo" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/alhambrashopping" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Alhambra (abre en una pestaña nueva)"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.tiktok.com/@alhambrashopping" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Alhambra (abre en una pestaña nueva)"><i class="ph ph-tiktok-logo" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__item">
+          <h2 class="footer__title">Nuestros centros</h2>
+          <div class="footer__brands">
+            <img src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324" loading="lazy">
+            <a href="https://www.costa-plaza.com/" target="_blank" rel="noopener noreferrer" aria-label="Costa Plaza (abre en una pestaña nueva)"><img src="imagenes/IId5KRdEMNy0J9srei1GHS3PVco.svg" alt="Costa Plaza" width="38" height="42" loading="lazy"></a>
+          </div>
+        </div>
+        <div class="footer__item">
+          <h2 class="footer__title" id="f-suscribete">Suscríbete</h2>
+          <form class="footer__subscribe" id="footer-subscribe" aria-labelledby="f-suscribete" novalidate>
+            <label class="visually-hidden" for="ff-email">Email</label>
+            <input id="ff-email" type="email" name="email" placeholder="Ingresa tu email" autocomplete="email" spellcheck="false" maxlength="120">
+            <button type="submit" aria-label="Continuar suscripción"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bloque central: enlaces, horarios, contacto, ubicación -->
+      <div class="footer__row footer__row--center">
+        <nav class="footer__item" aria-label="Enlaces del sitio">
+          <h2 class="footer__title">Nosotros</h2>
+          <a class="footer__link" href="/ubicacion"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Ubicación</a>
+          <a class="footer__link" href="/oficinas"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Oficinas</a>
+          <a class="footer__link" href="/salonauditorio"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Salón Auditorio</a>
+          <a class="footer__link" href="/contacto"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Contacto</a>
+
+          <h2 class="footer__title footer__title--next">Explorar</h2>
+          <a class="footer__link" href="marcas.html"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Marcas</a>
+          <a class="footer__link" href="restaurantes.html"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Restaurantes</a>
+          <a class="footer__link" href="index.html#inicio"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Eventos</a>
+          <a class="footer__link" href="/blog"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Blog</a>
+        </nav>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Horarios de atención</h2>
+          <p class="footer__label">Centro Comercial</p>
+          <p>Lunes a domingo: 10h00 a 21h00</p>
+          <p class="footer__label">Restaurantes</p>
+          <p>Lunes a domingo: hasta las 23h00</p>
+          <p class="footer__label">Oficinas administrativas</p>
+          <p>Lunes a viernes: 08h30 a 17h30</p>
+        </div>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Contáctanos</h2>
+          <p>Teléfono: <a href="tel:+59346005220">(04) 600-5220</a></p>
+          <a class="footer__link" href="/contacto"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Escríbenos</a>
+        </div>
+
+        <div class="footer__item">
+          <h2 class="footer__title">Visítanos</h2>
+          <address>Vía a Samborondón y Celeste Blacio de Rendón, Samborondón – Ecuador</address>
+          <a class="footer__link" href="https://maps.app.goo.gl/J7jprExU6aCsafxE7" target="_blank" rel="noopener noreferrer"><i class="ph ph-arrow-circle-right" aria-hidden="true"></i>Ver mapa</a>
+        </div>
+      </div>
+
+      <p class="footer__legal">Alhambra Shopping, Alhambra, Costa Plaza, las marcas, colores y signos distintivos, logotipos y colores son marcas registradas de Inmobiliaria Cobilhambra S.A. Los demás son de propiedad y derecho de sus respectivos propietarios. La información en este sitio es informativa e ilustrativa y sujeta a cambios.</p>
+
+      <div class="footer__row footer__row--bottom">
+        <p>© 2026 Alhambra Shopping. Todos los derechos reservados.</p>
+        <p>Inmobiliaria Cobilhambra S.A.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
