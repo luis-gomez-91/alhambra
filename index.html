@@ -49,83 +49,81 @@
 
   <main id="contenido">
 
-    <!-- 2. Carrusel de próximos eventos.
-         Las diapositivas van en orden cronológico; main.js quita las de fechas pasadas. -->
-    <section class="hero hero--carousel" id="inicio" aria-roledescription="carrusel" aria-labelledby="hero-title" data-carousel>
-      <div class="carousel__bgs" aria-hidden="true">
-        <img class="carousel__bg is-active" src="imagenes/bMHZY91kYoaBm3J81ZhOSSo4NZI.jpg" alt="" width="1594" height="784" fetchpriority="high">
-        <img class="carousel__bg" src="imagenes/Sy5Mex1hkXOH8fWgo3KqP5ywjg0.png" alt="" width="1440" height="960" decoding="async">
-        <img class="carousel__bg" src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="" width="1024" height="682" decoding="async">
-        <img class="carousel__bg" src="imagenes/GDUyFdQmdNCJHE0E1d6iQbMpeBA.webp" alt="" width="1320" height="734" decoding="async">
-      </div>
+    <!-- 2. Hero con video -->
+    <section class="hero hero--film" aria-labelledby="hero-name">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+        <source src="video/hero2.mp4" type="video/mp4">
+      </video>
       <div class="hero__shade" aria-hidden="true"></div>
-
       <div class="hero__inner container">
-        <div class="carousel intro">
-          <h1 class="eyebrow-title carousel__label" id="hero-title">
-            <img src="imagenes/AQs4AXTCh4L6G4kVfkC6pmpUdcg.svg" alt="" width="26" height="32"> Próximos eventos
-          </h1>
-
-          <div class="carousel__stage" aria-live="off">
-            <div class="slide is-active" role="group" aria-roledescription="diapositiva" data-date="2026-02-13" data-short="13 feb">
-              <p class="slide__type">Demostración</p>
-              <h2 class="hero__title">Nuevo Alhambra 2</h2>
-              <p class="hero__meta">
-                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-13">Viernes, 13 de febrero de 2026</time></span>
-              </p>
-              <div class="hero__actions">
-                <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-
-            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-02-14" data-short="14 feb">
-              <p class="slide__type">Taller</p>
-              <h2 class="hero__title">Dilo con Flores</h2>
-              <p class="hero__meta">
-                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-02-14">Sábado, 14 de febrero de 2026</time></span>
-              </p>
-              <div class="hero__actions">
-                <a class="btn btn--light" href="/eventos">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-
-            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-07-28" data-short="28 jul">
-              <h2 class="hero__title">Mid Year Sale</h2>
-              <p class="hero__meta">
-                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-28T08:30">Martes, 28 de julio de 2026</time></span>
-                <span><i class="ph ph-clock" aria-hidden="true"></i> 8H30</span>
-              </p>
-              <div class="hero__actions">
-                <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-              </div>
-            </div>
-
-            <div class="slide" role="group" aria-roledescription="diapositiva" data-date="2026-07-30" data-short="30 jul">
-              <p class="slide__type">Fitness</p>
-              <h2 class="hero__title">Feria Viva!</h2>
-              <p class="hero__meta">
-                <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> <time datetime="2026-07-30T14:00">Jueves, 30 de julio de 2026</time></span>
-                <span><i class="ph ph-clock" aria-hidden="true"></i> 2PM</span>
-              </p>
-              <div class="hero__actions">
-                <a class="btn btn--light" href="/eventos">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-                <ul class="sponsors" aria-label="Patrocinios">
-                  <li><img src="imagenes/AzdMndHYKY3liFiLwpYJi9sBrKc.jpeg" alt="Patrocinio 1" width="447" height="447" loading="lazy"></li>
-                  <li><img src="imagenes/04sPCICMpWpd5DB9cm1q846juno.png" alt="Patrocinio 2" width="432" height="462" loading="lazy"></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel__nav">
-            <ol class="carousel__dots" aria-label="Elegir evento"></ol>
-            <div class="carousel__buttons">
-              <button class="carousel__btn" type="button" data-action="pause" aria-label="Pausar carrusel"><i class="ph ph-pause" aria-hidden="true"></i></button>
-              <button class="carousel__btn" type="button" data-action="prev" aria-label="Evento anterior"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
-              <button class="carousel__btn" type="button" data-action="next" aria-label="Evento siguiente"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
-            </div>
-          </div>
+        <div class="hero__content intro">
+          <h1 class="hero__name" id="hero-name">Alhambra</h1>
+          <h2 class="hero__title">Vive lo extraordinario</h2>
+          <p class="hero__lead">Mucho más que compras: gastronomía, entretenimiento y experiencias únicas que hacen de cada visita un momento especial.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- 3. Próximos eventos, todos a la vez.
+         main.js ordena por fecha y quita los ya pasados. -->
+    <section class="section events" id="inicio" aria-labelledby="events-title" data-events>
+      <div class="container">
+        <h2 class="eyebrow-title eyebrow-title--dark" id="events-title">
+          <img src="imagenes/A1ojXZTXGa5odrog3kpK2BxSGnk.svg" alt="" width="26" height="32"> Próximos eventos
+        </h2>
+        <ul class="events__grid">
+          <li class="event reveal" data-date="2026-02-13">
+            <a class="event__link" href="/eventos">
+              <img class="event__photo" src="imagenes/bMHZY91kYoaBm3J81ZhOSSo4NZI.jpg" alt="" width="1594" height="784">
+              <span class="event__date"><time datetime="2026-02-13"><b>13</b> feb</time></span>
+              <span class="event__copy">
+                <span class="event__type">Demostración</span>
+                <h3 class="event__title">Nuevo Alhambra 2</h3>
+                <span class="event__cta">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+              </span>
+            </a>
+          </li>
+          <li class="event reveal" data-date="2026-02-14">
+            <a class="event__link" href="/eventos">
+              <img class="event__photo" src="imagenes/Sy5Mex1hkXOH8fWgo3KqP5ywjg0.png" alt="" width="1440" height="960" loading="lazy" decoding="async">
+              <span class="event__date"><time datetime="2026-02-14"><b>14</b> feb</time></span>
+              <span class="event__copy">
+                <span class="event__type">Taller</span>
+                <h3 class="event__title">Dilo con Flores</h3>
+                <span class="event__cta">Más información <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+              </span>
+            </a>
+          </li>
+          <li class="event reveal" data-date="2026-07-28">
+            <a class="event__link" href="/eventos">
+              <img class="event__photo" src="imagenes/9ZYsigPSJhc23fVR91nZnD0Dtc.png" alt="" width="1024" height="682" loading="lazy" decoding="async">
+              <span class="event__date"><time datetime="2026-07-28T08:30"><b>28</b> jul</time></span>
+              <span class="event__copy">
+                <h3 class="event__title">Mid Year Sale</h3>
+                <span class="event__when"><i class="ph ph-clock" aria-hidden="true"></i> 8H30</span>
+                <span class="event__cta">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+              </span>
+            </a>
+          </li>
+          <li class="event reveal" data-date="2026-07-30">
+            <a class="event__link" href="/eventos">
+              <img class="event__photo" src="imagenes/GDUyFdQmdNCJHE0E1d6iQbMpeBA.webp" alt="" width="1320" height="734" loading="lazy" decoding="async">
+              <span class="event__date"><time datetime="2026-07-30T14:00"><b>30</b> jul</time></span>
+              <span class="event__copy">
+                <span class="event__type">Fitness</span>
+                <h3 class="event__title">Feria Viva!</h3>
+                <span class="event__foot">
+                  <span class="event__when"><i class="ph ph-clock" aria-hidden="true"></i> 2PM</span>
+                  <ul class="sponsors" aria-label="Patrocinios">
+                    <li><img src="imagenes/AzdMndHYKY3liFiLwpYJi9sBrKc.jpeg" alt="Patrocinio 1" width="447" height="447" loading="lazy"></li>
+                    <li><img src="imagenes/04sPCICMpWpd5DB9cm1q846juno.png" alt="Patrocinio 2" width="432" height="462" loading="lazy"></li>
+                  </ul>
+                </span>
+                <span class="event__cta">Regístrate <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -183,7 +181,6 @@
     <section class="section subscribe" id="suscripcion" aria-labelledby="subscribe-title">
       <div class="container subscribe__inner">
         <div class="subscribe__aside reveal">
-          <img class="subscribe__logo" src="imagenes/HcVAk9C7PnJQR0x6m7aF7pGBwI.png" alt="Alhambra" width="232" height="324" loading="lazy">
           <h2 class="subscribe__title" id="subscribe-title">Mantente conectado</h2>
           <p>No te pierdas ningún evento ni promoción. Suscríbete a nuestra base de clientes y recibe información vía email.</p>
         </div>

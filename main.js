@@ -41,148 +41,35 @@
     if (e.matches) setMenu(false);
   });
 
+  const film = document.querySelector('.hero__video');
+  if (film && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    film.removeAttribute('autoplay');
+    film.pause();
+  }
+
   /* ------------------------------------------------------------------------
-     Carrusel de próximos eventos (hero)
-     Solo quedan los eventos de hoy en adelante, del más cercano al más
-     lejano. Si ya pasaron todos, se muestran igual para no dejar el hero
-     vacío. El avance automático lo marca la barra de progreso (CSS): al
-     terminar su animación se pasa al siguiente.
+     Próximos eventos
+     Se ordenan del más cercano al más lejano. Si alguno ya pasó, se oculta.
+     Si ya pasaron todos, se dejan para no dejar la sección vacía.
      ------------------------------------------------------------------------ */
 
-  const carousel = document.querySelector('[data-carousel]');
-
-  if (carousel) {
-    const stage = carousel.querySelector('.carousel__stage');
-    const navBar = carousel.querySelector('.carousel__nav');
-    const dotList = carousel.querySelector('.carousel__dots');
-    const pauseBtn = carousel.querySelector('[data-action="pause"]');
-    const pauseIcon = pauseBtn.querySelector('i');
-    const bgs = Array.from(carousel.querySelectorAll('.carousel__bg'));
-
+  const eventsSection = document.querySelector('[data-events]');
+  if (eventsSection) {
+    const list = eventsSection.querySelector('.events__grid');
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    let events = Array.from(stage.querySelectorAll('.slide'), (slide, i) => ({
-      slide,
-      bg: bgs[i],
-      date: new Date(`${slide.dataset.date}T00:00`),
-    })).sort((a, b) => a.date - b.date);
+    const items = Array.from(list.querySelectorAll('.event')).sort((a, b) => (
+      new Date(`${a.dataset.date}T00:00`) - new Date(`${b.dataset.date}T00:00`)
+    ));
+    items.forEach((item) => list.append(item));
 
-    const upcoming = events.filter((ev) => ev.date >= today);
+    const upcoming = items.filter((item) => new Date(`${item.dataset.date}T00:00`) >= today);
     if (upcoming.length) {
-      events.forEach((ev) => {
-        if (upcoming.includes(ev)) return;
-        ev.slide.remove();
-        ev.bg.remove();
-      });
-      events = upcoming;
-    }
-
-    const total = events.length;
-    const dots = events.map((ev, i) => {
-      const title = ev.slide.querySelector('.hero__title').textContent.trim();
-      ev.slide.setAttribute('aria-label', `${i + 1} de ${total}: ${title}`);
-
-      const li = document.createElement('li');
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'carousel__dot';
-      dot.setAttribute('aria-label', `${title}, ${ev.slide.dataset.short}`);
-      dot.innerHTML =
-        '<span class="carousel__bar"><span class="carousel__fill"></span></span>' +
-        `<span class="carousel__dot-label" aria-hidden="true"><b></b></span>`;
-      const label = dot.querySelector('.carousel__dot-label');
-      label.querySelector('b').textContent = ev.slide.dataset.short;
-      label.append(title);
-      li.append(dot);
-      dotList.append(li);
-      return dot;
-    });
-
-    let current = 0;
-    let userPaused = false;
-    let hovering = false;
-    let focused = false;
-
-    const show = (index) => {
-      current = (index + total) % total;
-      events.forEach((ev, i) => {
-        const active = i === current;
-        ev.slide.classList.toggle('is-active', active);
-        ev.bg.classList.toggle('is-active', active);
-        if (active) dots[i].setAttribute('aria-current', 'true');
-        else dots[i].removeAttribute('aria-current');
-      });
-    };
-
-    const syncPause = () => {
-      const paused = userPaused || hovering || focused;
-      carousel.classList.toggle('is-paused', paused);
-      // Anuncia los cambios solo cuando no avanza solo
-      stage.setAttribute('aria-live', paused ? 'polite' : 'off');
-    };
-
-    const setUserPaused = (paused) => {
-      userPaused = paused;
-      pauseBtn.setAttribute('aria-label', paused ? 'Reanudar carrusel' : 'Pausar carrusel');
-      pauseIcon.className = paused ? 'ph ph-play' : 'ph ph-pause';
-      syncPause();
-    };
-
-    if (total < 2) {
-      navBar.hidden = true;
-    } else {
-      // Con movimiento reducido no hay avance automático
-      if (reduceMotion.matches) {
-        carousel.classList.add('is-static');
-        pauseBtn.hidden = true;
-        userPaused = true;
-      }
-
-      dotList.addEventListener('animationend', (e) => {
-        if (e.animationName === 'carousel-progress') show(current + 1);
-      });
-
-      dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
-      carousel.querySelector('[data-action="prev"]').addEventListener('click', () => show(current - 1));
-      carousel.querySelector('[data-action="next"]').addEventListener('click', () => show(current + 1));
-      pauseBtn.addEventListener('click', () => setUserPaused(!userPaused));
-
-      navBar.addEventListener('keydown', (e) => {
-        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-        e.preventDefault();
-        show(current + (e.key === 'ArrowRight' ? 1 : -1));
-        if (e.target.classList.contains('carousel__dot')) dots[current].focus();
-      });
-
-      const content = carousel.querySelector('.carousel');
-      content.addEventListener('pointerenter', (e) => {
-        if (e.pointerType === 'mouse') { hovering = true; syncPause(); }
-      });
-      content.addEventListener('pointerleave', () => { hovering = false; syncPause(); });
-      carousel.addEventListener('focusin', () => { focused = true; syncPause(); });
-      carousel.addEventListener('focusout', (e) => {
-        if (!carousel.contains(e.relatedTarget)) { focused = false; syncPause(); }
-      });
-
-      // Deslizar en pantallas táctiles
-      let startX = 0;
-      let startY = 0;
-      carousel.addEventListener('pointerdown', (e) => {
-        startX = e.clientX;
-        startY = e.clientY;
-      });
-      carousel.addEventListener('pointerup', (e) => {
-        if (e.pointerType === 'mouse') return;
-        const dx = e.clientX - startX;
-        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(e.clientY - startY)) {
-          show(current + (dx < 0 ? 1 : -1));
-        }
+      items.forEach((item) => {
+        if (!upcoming.includes(item)) item.remove();
       });
     }
-
-    show(0);
-    syncPause();
   }
 
   /* ------------------------------------------------------------------------
